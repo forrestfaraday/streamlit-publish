@@ -20,6 +20,10 @@ jobs:
 
     - name: Install dependencies
       run: pip install -r requirements.txt
+      
+    - name: Set PORT environment variable
+      run: echo "PORT=${{ github.event.inputs.port }}" >> $GITHUB_ENV
+      
 
     - name: Deploy Streamlit app
       run: streamlit run app.py --server.port $PORT
