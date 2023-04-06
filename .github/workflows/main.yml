@@ -22,7 +22,7 @@ jobs:
       run: pip install -r requirements.txt
 
     - name: Set PORT environment variable
-      run: echo "PORT=$PORT" >> $GITHUB_ENV
+      run: echo "PORT=8501" >> $GITHUB_ENV
 
     - name: Run Streamlit app
       run: streamlit run app.py --server.port $PORT
